@@ -1,0 +1,42 @@
+# Model Configuration
+model:
+  input_shape: null  # Will be set dynamically based on data
+  num_classes: 4     # Number of size bins
+
+# Training Configuration
+training:
+  epochs: 50
+  batch_size: 32
+  validation_split: 0.2
+  test_size: 0.2
+  random_state: 42
+  early_stopping:
+    patience: 10
+    monitor: 'val_loss'
+    restore_best_weights: true
+
+# Size Bins Configuration
+size_bins:
+  - min: 15
+    max: 25
+    label: "Bin 1"
+  - min: 40
+    max: 50
+    label: "Bin 2"
+  - min: 65
+    max: 75
+    label: "Bin 3"
+  - min: 290
+    max: 310
+    label: "Bin 4"
+
+# Data Configuration
+data:
+  min_samples: 10  # Minimum number of samples required to train a model
+  data_path: "data/train_test_with_pmma.csv"
+
+# Output Configuration
+output:
+  model_dir: "output/models"
+  plot_dir: "output/plots"
+  log_file: "training.log" 
