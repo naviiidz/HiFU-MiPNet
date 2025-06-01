@@ -22,7 +22,16 @@ HiFU-MiPNet/
 │   ├── visualize.py            # Visualization tools
 │   └── final_model.h5          # Trained model weights
 ├── size_estimation_mlp/         # Size estimation implementation
-├── manual_labeling/             # Manual labeling tools
+│   ├── config.yaml             # Configuration settings
+│   ├── train_size_model.py     # Training script
+│   ├── predict_mat_size.py     # Combined material and size prediction
+│   ├── size_model_arch.py      # MLP model architecture
+│   ├── util.py                 # Utility functions
+├── manual_labeling/            # Manual labeling tools
+│   ├── manual_label.py        # Main labeling script
+│   ├── size_pred_labeling.py  # Size prediction labeling
+│   ├── load_data.py           # Data loading utilities
+│   ├── plot.py                # Visualization tools
 ├── LICENSE                      # MIT License
 └── requirements.txt             # Project dependencies
 ```
@@ -102,7 +111,13 @@ python train.py
 # Prediction
 python predict.py
 ```
-### MLP size estimation
+
+### MLP Size Estimation
+
+The size estimation component uses a Multi-Layer Perceptron (MLP) to predict the size of microspheres:
+- Trained on manually labeled size data
+- Uses bounding box information for prediction
+- Can be used in combination with material classification
 
 ```
 cd size_estimation_mlp
@@ -111,6 +126,20 @@ python train_size_model.py
 
 # Prediction: Material + Size using bbox
 python predict_mat_size.py
+```
+
+### Manual Labeling
+
+The manual labeling component provides tools for:
+- Labeling ultrasound signals for material classification
+- Annotating size information for training
+- Visualizing and validating labels
+- Generating labeled datasets
+
+```
+cd manual_labeling
+# Start labeling process
+python manual_label.py --csv_output OUTPUT_NAME.csv --category DATASET_CATEGORY --file_name FILE_NAME
 ```
 
 ## Data Processing
