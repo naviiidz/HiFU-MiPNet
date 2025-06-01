@@ -27,6 +27,13 @@ HiFU-MiPNet/
 └── requirements.txt             # Project dependencies
 ```
 
+## Data
+
+The dataset can be downloaded from Google Drive:
+[Download Dataset](https://drive.google.com/drive/folders/155tc1UMrrz98qi67ZMjPhE6f4ZXz_SgN?usp=sharing)
+
+After downloading, place the data files in the `data/` directory.
+
 ## Features
 
 - Multiple classification approaches:
@@ -72,7 +79,7 @@ HiFU-MiPNet/
    # For ML implementation
    pip install -r material_classification_ml/requirements.txt
    
-   # For CNN implementation
+   # For CNN implementation and size estimation
    pip install -r material_classification_cnn/requirements.txt
    ```
 
@@ -93,7 +100,17 @@ cd material_classification_cnn
 python train.py
 
 # Prediction
-python predict.py --input <signal_file> --model final_model.h5
+python predict.py
+```
+### MLP size estimation
+
+```
+cd size_estimation_mlp
+# Training
+python train_size_model.py
+
+# Prediction: Material + Size using bbox
+python predict_mat_size.py
 ```
 
 ## Data Processing
@@ -102,7 +119,7 @@ The system processes ultrasound signals through the following steps:
 1. Signal preprocessing and normalization
 2. Peak extraction and analysis
 3. Feature extraction (for ML approach)
-4. Data augmentation and balancing
+4. Balancing
 5. Train/test splitting
 
 ## Model Architectures
