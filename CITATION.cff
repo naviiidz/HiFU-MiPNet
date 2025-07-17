@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Zarrabi
+    given-names: Navid
+    orcid: https://orcid.org/0009-0002-2316-318X
+title: naviiidz/HiFU-MiPNet: Code release for microplastic classification and sizing via ultrasound
+version: v1.0.0
+date-released: 2025-07-17
