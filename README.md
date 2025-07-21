@@ -1,4 +1,5 @@
 # HiFU-MiPNet: High-Frequency Ultrasound Material Identification and Size Estimation Pipeline
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16042276.svg)](https://doi.org/10.5281/zenodo.16042276)
 
 A deep learning-based system for material identification of microspheres using high-frequency ultrasound signals. This project implements both traditional machine learning and deep learning approaches for material classification.
 
