@@ -33,7 +33,7 @@ size_bins:
 # Data Configuration
 data:
   min_samples: 10  # Minimum number of samples required to train a model
-  data_path: "data/train_test_with_pmma.csv"
+  data_path: "data/labeled_HFUS_dataset.csv"
 
 # Output Configuration
 output:
