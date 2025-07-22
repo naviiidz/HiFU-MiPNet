@@ -70,8 +70,8 @@ def predict_config():
 def peak_extract_param():
     # Define available datasets by category
     DATASETS = {
-        "2023_10_04_PE_PMMA": {
-            "description": "PMMA & PE pure samples without size variations",
+        "test_data": {
+            "description": "PMMA, PE, Steel, and Glass samples",
             "files": {
                 "pmma_50um": {
                     "path": "20231004_pe_pmma/PMMA50um_40MHz_2200x2000x12_5umB.mat",
@@ -82,67 +82,26 @@ def peak_extract_param():
                         "box_size": 10
                     }
                 },
-                "pe_50um_1": {
-                    "path": "20231004_pe_pmma/PE50um_40MHz_1800x1400x12_5um.mat",
-                    "params": {
-                        "window_size": 5,
-                        "alpha": 0.7,
-                        "sigma": 1.8,
-                        "box_size": 10
-                    }
-                },
-                "pe_50um_2": {
-                    "path": "20231004_pe_pmma/PE50um_40MHz_2200x2000x12_5um.mat",
-                    "params": {
-                        "window_size": 5,
-                        "alpha": 0.7,
-                        "sigma": 1.8,
-                        "box_size": 10
-                    }
-                }
-            }
-        },
-        "2024_04_17_MIXED": {
-            "description": "Glass, PE, Steel, PMMA pure samples with size variations",
-            "files": {
-                "glass_50um_small": {
-                    "path": "20240417_glass_pe_steel/40MHz_glass_300x300x10um.mat",
-                    "params": {
-                        "window_size": 5,
-                        "alpha": 0.8,
-                        "sigma": 2.0,
-                        "box_size": 12
-                    }
-                },
-                "glass_50um_large": {
+                "glass_50um": {
                     "path": "20240417_glass_pe_steel/40MHz_glass_1000x1000x20um.mat",
-                    "params": {
-                        "window_size": 5,
-                        "alpha": 0.5,
-                        "sigma": 1,
-                        "box_size": 8
-                    }
-                },
-                "pe_50um_single": {
-                    "path": "20240417_glass_pe_steel/40MHz_polye_300x300x10um.mat",
-                    "params": {
-                        "window_size": 20,
-                        "alpha": 0.7,
-                        "sigma": 1.8,
-                        "box_size": 21
-                    }
-                },
-                "pe_50um_multi": {
-                    "path": "20240417_glass_pe_steel/40MHz_polye_1200x1200x20um.mat",
                     "params": {
                         "window_size": 7,
                         "alpha": 0.75,
-                        "sigma": 2.0,
-                        "box_size": 12
+                        "sigma": 2.2,
+                        "box_size": 6
                     }
                 },
-                "steel_50um_single": {
-                    "path": "20240417_glass_pe_steel/40MHz_steel_1000x1000x20um.mat",
+                "mixed_pe_28_57_78_335um": {
+                    "path": "20241025_glass_pe_steel/40MHz_pe_3200x3000x10um.mat",
+                    "params": {
+                        "window_size": 7,
+                        "alpha": 0.75,
+                        "sigma": 1.0,
+                        "box_size": 14
+                    }
+                },
+                "steel_50um": {
+                    "path": "20240417_glass_pe_steel/40MHz_steel2_3200x3000x10um.mat",
                     "params": {
                         "window_size": 7,
                         "alpha": 0.85,
@@ -150,16 +109,7 @@ def peak_extract_param():
                         "box_size": 14
                     }
                 },
-                "steel_50um_multi": {
-                    "path": "20240417_glass_pe_steel/40MHz_steel_1000x1000x20um.mat",
-                    "params": {
-                        "window_size": 6,
-                        "alpha": 0.85,
-                        "sigma": 2.5,
-                        "box_size": 6
-                    }
-                },
-                "pmma_20_80": {
+                "mixed_pmma_20um_80um": {
                     "path": "20250409_pmma/40MHz_PMMA20-80_3200x3000x10um.mat",
                     "params": {
                         "window_size": 7,
@@ -167,13 +117,8 @@ def peak_extract_param():
                         "sigma": 2.0,
                         "box_size": 12
                     }
-                }
-            }
-        },
-        "2024_10_25_PURE": {
-            "description": "Glass, PE, and Steel pure samples with size variations",
-            "files": {
-                "glass": {
+                },
+                "mixed_glass_45_90_335um": {
                     "path": "20241025_glass_pe_steel/40MHz_glass_3200x3000x10um.mat",
                     "params": {
                         "window_size": 9,
@@ -182,49 +127,17 @@ def peak_extract_param():
                         "box_size": 16
                     }
                 },
-                "pe": {
-                    "path": "20241025_glass_pe_steel/40MHz_pe_3200x3000x10um.mat",
-                    "params": {
-                        "window_size": 7,
-                        "alpha": 0.75,
-                        "sigma": 2.0,
-                        "box_size": 14
-                    }
-                },
-                "steel_1": {
+                "mixed_steel_28_57_78_335um": {
                     "path": "20241025_glass_pe_steel/40MHz_steel_1800x1500x10um.mat",
                     "params": {
-                        "window_size": 9,
+                        "window_size": 6,
                         "alpha": 0.85,
-                        "sigma": 2.8,
-                        "box_size": 16
+                        "sigma": 2,
+                        "box_size": 8
                     }
                 },
-                "steel_2": {
-                    "path": "20241025_glass_pe_steel/40MHz_steel2_3200x3000x10um.mat",
-                    "params": {
-                        "window_size": 9,
-                        "alpha": 0.85,
-                        "sigma": 2.8,
-                        "box_size": 16
-                    }
-                }
-            }
-        },
-        "2024_11_15_MIXED": {
-            "description": "Mixed samples with size variations",
-            "files": {
-                "mixed_area1": {
-                    "path": "20241115_Mixed/40MHz_mixedspheres_4200x4000x10um_10dBVZ000R00000/40MHz_mixedspheres_4200x4000x10um_10dB.mat",
-                    "params": {
-                        "window_size": 7,
-                        "alpha": 0.8,
-                        "sigma": 2.2,
-                        "box_size": 14
-                    }
-                },
-                "mixed_area2": {
-                    "path": "20241115_Mixed/40MHz_mixedspheres_4200x4000x10um_10dB_area2.mat",
+                "mixed_glass_steel_pe": {
+                    "path": "20241115_Mixed/40MHz_mixedspheres_4200x4000x10um_10dB.mat",
                     "params": {
                         "window_size": 7,
                         "alpha": 0.8,
