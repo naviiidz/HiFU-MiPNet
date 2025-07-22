@@ -4,7 +4,7 @@ training:
   test_size: 0.3
   random_state: 42
   feature_correlation_threshold: 0.8
-  data_dir: 'data/train_test_with_pmma.csv'
+  data_dir: 'data/labeled_HFUS_dataset.csv'
   output_dir: "output"
 
 # Model Configuration
